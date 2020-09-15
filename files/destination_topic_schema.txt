@@ -30,3 +30,37 @@
 	"type" : "boolean"
      } ]
   }
+  ---------------------------------------------
+  {
+  "type" : "record",
+  "name" : "UpdatedSchema",
+  "namespace" : "Test",
+  "fields" : [ {
+    "name" : "UserID",
+    "type" : ["null", "string"]
+  }, {
+    "name" : "CO_ContractID",
+    "type" : ["null", "int"]
+  }, {
+    "name" : "LastUpdate_before",
+    "type" : ["null", "long"]
+  }, {
+    "name" : "IsIndividual_before",
+    "type" : ["null", "boolean"]
+  }, {
+    "name" : "LastUpdate_after",
+    "type" : ["null", "long"]
+  }, {
+    "name" : "IsIndividual_after",
+    "type" : ["null", "boolean"]
+  }, {
+    "name" : "CCP_ID",
+    "type" : ["null", "int"]
+  }, {
+    "name" : "CCP_AdminFee_before",
+    "type" : ["null", "double"]
+  }, {
+    "name" : "CCP_AdminFee_after",
+    "type" : ["null", "double"]
+  }]
+}

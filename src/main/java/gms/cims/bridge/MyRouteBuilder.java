@@ -23,9 +23,18 @@ public class MyRouteBuilder extends RouteBuilder {
                 + "&keyDeserializer=" + StringDeserializer.class.getName()
                 + "&valueDeserializer=" + KafkaAvroDeserializer.class.getName())
                 .process(new MessageProcessor())
-                .log("Message received from Kafka : ${body}")
-                .to("kafka:" + Arguments.DestinationTopic + "?brokers=" + Arguments.Broker
-                        + "&serializerClass=" + KafkaAvroSerializer.class.getName());
+                .log("Message received from Kafka - claimBlackList : ${body}");
+//                .to("kafka:" + Arguments.DestinationTopic + "?brokers=" + Arguments.Broker
+//                         + "&serializerClass=" + KafkaAvroSerializer.class.getName());
+
+        from("kafka:CIMSTEST.Financial.ClaimCostPlus?brokers=" + Arguments.Broker
+                + "&maxPollRecords=5000"
+                + "&consumersCount=1"
+                + "&groupId=" + Arguments.GroupId
+                + "&keyDeserializer=" + StringDeserializer.class.getName()
+                + "&valueDeserializer=" + KafkaAvroDeserializer.class.getName())
+                .process(new MessageProcessor())
+                .log("Message received from Kafka : ${body}");
     }
 
 }

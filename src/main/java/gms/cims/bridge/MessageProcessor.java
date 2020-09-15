@@ -25,14 +25,14 @@ public class MessageProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         try {
             JSONObject kafkaBodyMessageObject = new JSONObject(exchange.getIn().getBody(String.class));
-            exchange.getIn().setBody(GetRecordFromJsonObject(kafkaBodyMessageObject, LoadSchemaFromFile()));
+            exchange.getIn().setBody(GetRecordFromJsonObject(kafkaBodyMessageObject, LoadSchemaFromFile("claimBlackListValue.avsc")));
         } catch (ExpectedBodyTypeException e) {
             LOG.error(e.toString() + exchange.getIn().getBody(String.class));
         }
     }
 
-    private Schema LoadSchemaFromFile() throws IOException {
-        return new Schema.Parser().parse(getClass().getClassLoader().getResourceAsStream("claimBlackListValue.avsc"));
+    private Schema LoadSchemaFromFile(String schemaFileName) throws IOException {
+        return new Schema.Parser().parse(getClass().getClassLoader().getResourceAsStream(schemaFileName));
     }
 
     private GenericData.Record GetRecordFromJsonObject(JSONObject kafkaBodyMessageObject, Schema schema) {
@@ -49,6 +49,9 @@ public class MessageProcessor implements Processor {
         record.set("IsIndividual_before", data_before.get("IsIndividual"));
         record.set("LastUpdate_after", data_after.get("LastUpdate"));
         record.set("IsIndividual_after", data_after.get("IsIndividual"));
+        record.set("CCP_ID", data_before.get("CCP_ID"));
+        record.set("CCP_AdminFee_before", data_before.get("CCP_AdminFee"));
+        record.set("CCP_AdminFee_after", data_after.get("CCP_AdminFee"));
 
         return record.build();
     }
