@@ -1,33 +1,42 @@
 {
   "type" : "record",
-  "name" : "UpdatedSchema",
+  "name" : "ClaimBlackList",
   "namespace" : "Test",
   "fields" : [ {
     "name" : "UserID",
-    "type" : ["null", "string"]
+    "type" : "string",
+    "default" : ""
   }, {
     "name" : "CO_ContractID",
-    "type" : ["null", "int"]
+    "type" : "int",
+    "default" : 0
   }, {
     "name" : "LastUpdate_before",
-    "type" : ["null", "long"]
+    "type" : "long",
+    "default" : 0
   }, {
     "name" : "IsIndividual_before",
-    "type" : ["null", "boolean"]
+    "type" : "boolean",
+    "default" : false
   }, {
     "name" : "LastUpdate_after",
-    "type" : ["null", "long"]
+    "type" : "long",
+    "default" : 0
   }, {
     "name" : "IsIndividual_after",
-    "type" : ["null", "boolean"]
+    "type" : "boolean",
+    "default" : false
   }, {
     "name" : "CCP_ID",
-    "type" : ["null", "int"]
+    "type" : "int",
+    "default" : 0
   }, {
     "name" : "CCP_AdminFee_before",
-    "type" : ["null", "double"]
+    "type" : "double",
+    "default" : 0
   }, {
     "name" : "CCP_AdminFee_after",
-    "type" : ["null", "double"]
-  }]
+    "type" : "double",
+    "default" : 0
+  } ]
 }

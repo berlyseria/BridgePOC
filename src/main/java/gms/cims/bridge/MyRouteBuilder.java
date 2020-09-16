@@ -34,7 +34,7 @@ public class MyRouteBuilder extends RouteBuilder {
                 + "&keyDeserializer=" + StringDeserializer.class.getName()
                 + "&valueDeserializer=" + KafkaAvroDeserializer.class.getName())
                 .process(new MessageProcessor())
-                .log("Message received from Kafka : ${body}");
+                .log("Message received from Kafka - claimCostPlus: ${body}");
     }
 
 }

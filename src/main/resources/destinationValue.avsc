@@ -16,13 +16,27 @@
     "default" : 0
   }, {
     "name" : "IsIndividual_before",
-    "type" : "boolean"
+    "type" : "boolean",
+    "default" : false
   }, {
     "name" : "LastUpdate_after",
     "type" : "long",
     "default" : 0
   }, {
     "name" : "IsIndividual_after",
-    "type" : "boolean"
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "CCP_ID",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "CCP_AdminFee_before",
+    "type" : "double",
+    "default" : 0
+  }, {
+    "name" : "CCP_AdminFee_after",
+    "type" : "double",
+    "default" : 0
   } ]
 }
