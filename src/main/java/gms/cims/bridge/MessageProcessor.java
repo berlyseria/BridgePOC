@@ -41,6 +41,7 @@ public class MessageProcessor implements Processor {
 
         result.keys().forEachRemaining(key ->{
             System.out.println(key + ": " + result.get(key));
+            record.set(key.toString(), result.getString(result.get(key).toString()));
         });
 
         // TO DO: BUILD SCHEMA FILE
@@ -75,16 +76,16 @@ public class MessageProcessor implements Processor {
             String holder;
             Object value = after.get(key);
 
-            if(value instanceof String || value instanceof Integer || value instanceof Double || value instanceof Long || value instanceof Boolean || value instanceof Byte){
+             if(value instanceof String || value instanceof Integer || value instanceof Double || value instanceof Long || value instanceof Boolean || value instanceof Byte){
                 if(after.has(key)){
                     holder = key + "_after";
 //                    System.out.println(key + " After: " + value + " Before: " + before.get(key));
 
                     if(!value.equals(before.get(key))){
-                        result.put(holder, value);
+                        result.put(holder, value.toString());
                     }
                 }
-            }
+             }
         });
 
         return result;
