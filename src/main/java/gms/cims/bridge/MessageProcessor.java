@@ -34,14 +34,15 @@ public class MessageProcessor implements Processor {
 
         GenericRecordBuilder record = new GenericRecordBuilder(schema);
 
+        JSONObject sourceData = kafkaBodyMessageObject.getJSONObject("source");
         JSONObject data_before = kafkaBodyMessageObject.getJSONObject("before");
         JSONObject data_after = kafkaBodyMessageObject.getJSONObject("after");
 
-        JSONObject result = buildJsonObject(data_before, data_after);
+        JSONObject result = buildJsonObject(sourceData, data_before, data_after);
 
         result.keys().forEachRemaining(key ->{
             System.out.println(key + ": " + result.get(key));
-            record.set(key.toString(), result.getString(result.get(key).toString()));
+            // record.set(key.toString(), result.getString(result.get(key).toString()));
         });
 
         // TO DO: BUILD SCHEMA FILE
@@ -62,18 +63,30 @@ public class MessageProcessor implements Processor {
         return record.build();
     }
 
-    private JSONObject buildJsonObject (JSONObject before, JSONObject after){
+    private JSONObject buildJsonObject (JSONObject source, JSONObject before, JSONObject after){
         JSONObject result = new JSONObject();
 
-        before.keys().forEachRemaining(key -> {
-            Object value = before.get(key);
-            if(value instanceof String || value instanceof Integer || value instanceof Double || value instanceof Long || value instanceof Boolean){
-                result.put(key, value);
+        // Get source topic information:
+        source.keys().forEachRemaining(key -> {
+            if(key.equals("schema") || key.equals("table")){
+                result.put(key, source.get(key));
             }
         });
 
+        // System.out.println("from source:" + result);
+
+        before.keys().forEachRemaining(key -> {
+            String holder = key + "_before";
+            Object value = before.get(key);
+            if(value instanceof String || value instanceof Integer || value instanceof Double || value instanceof Long || value instanceof Boolean || value instanceof Byte){
+                result.put(holder, value);
+            }
+        });
+
+        // System.out.println("from before:" + result);
+
         after.keys().forEachRemaining(key -> {
-            String holder;
+            String holder = key + "_after";
             Object value = after.get(key);
 
              if(value instanceof String || value instanceof Integer || value instanceof Double || value instanceof Long || value instanceof Boolean || value instanceof Byte){
@@ -82,11 +95,12 @@ public class MessageProcessor implements Processor {
 //                    System.out.println(key + " After: " + value + " Before: " + before.get(key));
 
                     if(!value.equals(before.get(key))){
-                        result.put(holder, value.toString());
+                        result.put(holder, value);
                     }
                 }
              }
         });
+        // System.out.println("from after:" + result);
 
         return result;
     }

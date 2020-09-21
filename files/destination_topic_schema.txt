@@ -64,3 +64,46 @@
     "type" : ["null", "double"]
   }]
 }
+---------------------------------------------
+{
+  "type" : "record",
+  "name" : "ClaimBlackList",
+  "namespace" : "Test",
+  "fields" : [ {
+    "name" : "CCP_ID",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "LastUpdate",
+    "type" : "long",
+    "default" : 0
+  }, {
+	"name" : "UserID",
+    "type" : "string",
+    "default" : ""
+  },{
+    "name" : "CL_ClaimID",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "IsIndividual",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "CO_ContractID",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "LastUpdate",
+    "type" : "long",
+    "default" : 0
+  }, {
+    "name" : "IsIndividual_after",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "UserID",
+    "type" : "string",
+    "default" : ""
+  } ]
+}

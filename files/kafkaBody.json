@@ -1,0 +1,36 @@
+{
+    "op": "u",
+    "before": {
+        "IsIndividual": false,
+        "CO_ContractID": 407,
+        "LastUpdate": 1017917768000,
+        "RowVersion": {
+            "bytes": "\u0000\u0000\u0000\u0000¥MèG"
+        },
+        "UserID": "speters                       "
+    },
+    "after": {
+        "IsIndividual": true,
+        "CO_ContractID": 407,
+        "LastUpdate": 1017917768000,
+        "RowVersion": {
+            "bytes": "\u0000\u0000\u0000\u0000¥MèI"
+        },
+        "UserID": "speters                       "
+    },
+    "source": {
+        "schema": "Customer",
+        "event_serial_no": 2,
+        "connector": "sqlserver",
+        "name": "CIMSTEST",
+        "commit_lsn": "000eba55:0002f3b0:0001",
+        "change_lsn": "000eba55:0002f3a8:0002",
+        "version": "1.2.3.Final",
+        "ts_ms": 1600428473143,
+        "snapshot": "false",
+        "db": "CIMS",
+        "table": "ClaimBlackList"
+    },
+    "ts_ms": 1600450078052,
+    "transaction": null
+}

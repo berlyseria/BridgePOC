@@ -1,0 +1,85 @@
+before: {
+    "IsIndividual": false,
+    "CO_ContractID": 407,
+    "LastUpdate": 1017917768000,
+    "RowVersion": {
+        "bytes": "\u0000\u0000\u0000\u0000¥MèB"
+    },
+    "UserID": "speters"
+}
+
+after: {
+    "IsIndividual": true,
+    "CO_ContractID": 407,
+    "LastUpdate": 1017917768000,
+    "RowVersion": {
+        "bytes": "\u0000\u0000\u0000\u0000¥MèD"
+    },
+    "UserID": "speters"
+}
+
+before: {
+    "CCP_ID": 1,
+    "CCP_PremTax": {
+        "bytes": "\u0000"
+    },
+    "CCP_GST": {
+        "bytes": "\u0000ø"
+    },
+    "CCP_HST": {
+        "bytes": "\u0000"
+    },
+    "CCP_PremAdmin": {
+        "bytes": "\u0000"
+    },
+    "LastUpdate": 1300971344717,
+    "RowVersion": {
+        "bytes": "\u0000\u0000\u0000\u0000¥MèC"
+    },
+    "UserID": "lmarcynuk",
+    "CCP_RST": {
+        "bytes": "\u0000"
+    },
+    "CCP_AdminFee": {
+        "bytes": "\u001bX"
+    },
+    "CL_ClaimID": 8668986
+}
+
+after: {
+    "CCP_ID": 1,
+    "CCP_PremTax": {
+        "bytes": "\u0000"
+    },
+    "CCP_GST": {
+        "bytes": "\u0000ø"
+    },
+    "CCP_HST": {
+        "bytes": "\u0000"
+    },
+    "CCP_PremAdmin": {
+        "bytes": "\u0000"
+    },
+    "LastUpdate": 1300971344717,
+    "RowVersion": {
+        "bytes": "\u0000\u0000\u0000\u0000¥MèE"
+    },
+    "UserID": "lmarcynuk",
+    "CCP_RST": {
+        "bytes": "\u0000"
+    },
+    "CCP_AdminFee": {
+        "bytes": "\u001b¼"
+    },
+    "CL_ClaimID": 8668986
+}
+
+result: IsIndividual: false
+result: CO_ContractID: 407
+result: LastUpdate: 1017917768000
+result: IsIndividual_after: true
+result: UserID: speters                       
+result: CCP_ID: 1
+result: LastUpdate: 1300971344717
+result: UserID: lmarcynuk
+result: CL_ClaimID: 8668986
