@@ -1,12 +1,20 @@
 {
   "type" : "record",
-  "name" : "ClaimBlackList",
+  "name" : "testSchema",
   "namespace" : "Test",
   "fields" : [ {
-    "name" : "UserID",
+    "name" : "schema",
     "type" : "string",
     "default" : ""
   }, {
+    "name" : "table",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "userID",
+    "type" : "string",
+    "default" : ""
+  },{
     "name" : "CO_ContractID",
     "type" : "int",
     "default" : 0
@@ -15,7 +23,7 @@
     "type" : "long",
     "default" : 0
   }, {
-    "name" : "IsIndividual_before",
+    "name" : "IsIndividual",
     "type" : "boolean",
     "default" : false
   }, {

@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63abd9c9-ec5e-48b0-8c05-39d3614f1aaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files/kafkaBody.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/results.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/sampletest.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/destination_topic_schema.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/destination_topic_schema.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/Arguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/Arguments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MessageProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MyRouteBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MyRouteBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/Arguments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/Arguments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/destinationValue.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/destinationValue.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/destinationValue.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/destinationValue.avsc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MessageProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MessageProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MyRouteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MyRouteBuilder.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,28 +130,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600365088256" />
-    <state width="1877" height="430" key="GridCell.Tab.0.bottom" timestamp="1600722641533">
+    <state width="1567" height="385" key="GridCell.Tab.0.bottom" timestamp="1600726085276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="430" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600722641533" />
+    <state width="1567" height="385" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600726085276" />
     <state width="1877" height="401" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@1920.0.1920.1040" timestamp="1598988273717" />
     <state width="1877" height="468" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600295149593" />
-    <state width="1877" height="430" key="GridCell.Tab.0.center" timestamp="1600722641533">
+    <state width="1567" height="385" key="GridCell.Tab.0.center" timestamp="1600726085276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="430" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600722641533" />
+    <state width="1567" height="385" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600726085276" />
     <state width="1877" height="401" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@1920.0.1920.1040" timestamp="1598988273716" />
     <state width="1877" height="468" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600295149593" />
-    <state width="1877" height="430" key="GridCell.Tab.0.left" timestamp="1600722641533">
+    <state width="1567" height="385" key="GridCell.Tab.0.left" timestamp="1600726085276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="430" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600722641533" />
+    <state width="1567" height="385" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600726085276" />
     <state width="1877" height="401" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@1920.0.1920.1040" timestamp="1598988273716" />
     <state width="1877" height="468" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600295149592" />
-    <state width="1877" height="430" key="GridCell.Tab.0.right" timestamp="1600722641533">
+    <state width="1567" height="385" key="GridCell.Tab.0.right" timestamp="1600726085276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="430" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600722641533" />
+    <state width="1567" height="385" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600726085276" />
     <state width="1877" height="401" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@1920.0.1920.1040" timestamp="1598988273716" />
     <state width="1877" height="468" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600295149593" />
     <state width="1877" height="155" key="GridCell.Tab.1.bottom" timestamp="1600380324095">
@@ -197,9 +191,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600202967029" />
-    <state x="1221" y="123" width="1508" height="751" key="dock-window-1" timestamp="1600188768138">
+    <state x="2236" y="167" width="1537" height="682" key="dock-window-1" timestamp="1600725157344">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2236" y="167" width="1537" height="682" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600725157344" />
     <state x="1221" y="123" width="1508" height="751" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600188768138" />
     <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1599103270660">
       <screen x="0" y="0" width="1920" height="1040" />
