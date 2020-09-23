@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63abd9c9-ec5e-48b0-8c05-39d3614f1aaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/Arguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/Arguments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MessageProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MyRouteBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gms/cims/bridge/MyRouteBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/Arguments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/Arguments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MessageProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MessageProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MyRouteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gms/cims/bridge/MyRouteBuilder.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/source/Projects/BridgePOC/BridgePOC" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -126,10 +126,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="435" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1599676290604" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1600365088256">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1600884139168">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@0.0.1920.1040" timestamp="1600365088256" />
+    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/3840.0.1360.728@1920.0.1920.1040" timestamp="1600884139168" />
     <state width="1567" height="385" key="GridCell.Tab.0.bottom" timestamp="1600726085276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
