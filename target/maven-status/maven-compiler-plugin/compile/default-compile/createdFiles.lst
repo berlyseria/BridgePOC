@@ -1,8 +1,5 @@
-gms\cims\bridge\KafkaAvroSerializer.class
-gms\cims\bridge\SchemaRegistryName.class
-gms\cims\bridge\KafkaAvroMessageConsumerProcessor.class
+gms\cims\bridge\ClaimStatus.class
 gms\cims\bridge\MainApp.class
-gms\cims\bridge\MessageProcessor.class
-gms\cims\bridge\KafkaAvroDeserializer.class
-gms\cims\bridge\MyRouteBuilder.class
+gms\cims\bridge\ClaimStatus$Builder.class
+gms\cims\bridge\ClaimStatus$1.class
 gms\cims\bridge\Arguments.class
