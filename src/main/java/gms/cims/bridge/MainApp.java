@@ -1,7 +1,6 @@
 package gms.cims.bridge;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.tools.javac.jvm.Gen;
 import io.confluent.kafka.streams.serdes.avro.GenericAvroSerde;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -17,22 +16,47 @@ import java.util.Properties;
 
 public class MainApp {
 
+    static Arguments arguments;
+    static Topology topology;
+    static Properties properties;
+    static KafkaStreams streams;
     static GenericRecord genericRecord;
+
 
     public static void main(String... args) throws Exception {
 
-        Arguments arguments = SetArguments("CIMSTEST.Financial.ClaimStatusClaimLink",
+        /* Joining ClaimStatusLink and ClaimStatus
+            Output topic: ClaimStatusOutput
+         */
+        arguments = SetArguments("CIMSTEST.Financial.ClaimStatusClaimLink",
                 "CIMSTEST.Financial.ClaimStatus",
                 "ClaimStatusOutput",
                 "CS_ClaimStatusID",
                 "ClaimStatusJoin");
 
-        Topology topology = buildTopology(arguments);
-        Properties props = buildProperties(arguments);
+        topology = buildTopology(arguments, ClaimStatus.class);
+        properties = buildProperties(arguments);
 
-        final KafkaStreams streams = new KafkaStreams(topology, props);
+        streams = new KafkaStreams(topology, properties);
         streams.cleanUp();
         streams.start();
+
+        /* Joining ClaimStatusOutput and ClaimContractLink
+            Output topic: ClaimStatusContractOutput
+         */
+        arguments = SetArguments(arguments.getOutputTopicName(),
+                "CIMSTEST.Financial.ClaimContractLink",
+                "ClaimStatusContractOutput",
+                "CL_ClaimID",
+                "ClaimStatusContractJoin");
+
+        topology = buildTopology(arguments, ClaimStatusContractLink.class);
+        properties = buildProperties(arguments);
+
+        streams = new KafkaStreams(topology, properties);
+        streams.cleanUp();
+        streams.start();
+
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
     }
 
@@ -49,7 +73,7 @@ public class MainApp {
         return arguments;
     }
 
-    private static Topology buildTopology(Arguments args) {
+    private static Topology buildTopology(Arguments args, Class<?> className) throws ClassNotFoundException {
         StreamsBuilder builder = new StreamsBuilder();
 
         KStream<String, GenericRecord> leftTopic = builder.stream(args.getLeftTopicName());
@@ -58,7 +82,7 @@ public class MainApp {
         KTable<String, GenericRecord> keySetTopic1 = leftTopic.map((key, value) -> KeyValue.pair(SetKey(value, args.getCommonKey()), value)).toTable();
         KTable<String, GenericRecord> keySetTopic2 = rightTopic.map((key, value) -> KeyValue.pair(SetKey(value, args.getCommonKey()), value)).toTable();
 
-        KTable<String, GenericRecord> joined = InnerJoinKTables(args, keySetTopic1, keySetTopic2, "ClaimStatus");
+        KTable<String, GenericRecord> joined = InnerJoinKTables(keySetTopic1, keySetTopic2, className);
 
         joined.toStream().to(args.getOutputTopicName());
 
@@ -83,29 +107,27 @@ public class MainApp {
         else return value.get(commonKey).toString();
     }
 
-    private static KTable<String, GenericRecord> InnerJoinKTables(Arguments args, KTable<String, GenericRecord> leftTopic, KTable<String, GenericRecord> rightTopic, String className) {
+    private static KTable<String, GenericRecord> InnerJoinKTables(KTable<String, GenericRecord> first, KTable<String, GenericRecord> second, Class<?> className) {
 
-        KTable<String, GenericRecord> result = leftTopic.join(rightTopic,
+        KTable<String, GenericRecord> result =first.join(second,
                 (left,right) -> {
                     JSONObject leftJSON = new JSONObject(left.toString());
                     JSONObject rightJSON = new JSONObject(right.toString());
                     ObjectMapper objectMapper = new ObjectMapper();
-                    ClaimStatus claim = new ClaimStatus();
-
                     leftJSON.keys().forEachRemaining(k -> {
                         if (!rightJSON.has(k)) {
                             rightJSON.put(k, leftJSON.get(k));
                         }
                     });
-
                     try {
-                        claim = objectMapper.readValue(rightJSON.toString(), ClaimStatus.class);
+                        return (GenericRecord) objectMapper.readValue(rightJSON.toString(), className);
                     } catch (IOException e) {
                         e.printStackTrace();
+                        return null;
                     }
+                }
+        );
 
-                    return claim;
-                });
         return result;
     }
 }
