@@ -73,7 +73,7 @@ public class MainApp {
         return arguments;
     }
 
-    private static Topology buildTopology(Arguments args, Class<?> className) throws ClassNotFoundException {
+    private static Topology buildTopology(Arguments args, Class<?> className) {
         StreamsBuilder builder = new StreamsBuilder();
 
         KStream<String, GenericRecord> leftTopic = builder.stream(args.getLeftTopicName());
