@@ -1,4 +1,3 @@
-
 package gms.cims.bridge;
 
 import org.apache.camel.main.Main;
@@ -18,3 +17,4 @@ public class MainApp {
     }
 
 }
+
